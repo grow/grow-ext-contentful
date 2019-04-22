@@ -116,7 +116,7 @@ class ContentfulPreprocessor(grow.Preprocessor):
         fields = entry.fields()
         fields = _tag_localized_fields(entry, fields, tag_built_ins=True)
         result = yaml.dump(fields, default_flow_style=False)
-        fields = yaml.safe_load(result)
+        fields = yaml.load(result)
 
         # Retrieve the key used for the basename from the fields, otherwise use
         # the enry's sys.id.
